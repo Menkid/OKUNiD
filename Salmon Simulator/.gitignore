@@ -20,6 +20,11 @@ ExportedObj/
 *.unityproj
 *.booproj
 
+# ==================== #
+#  Ignore .meta files  #
+# ==================== #
+*.meta
+
 # ============ #
 # OS generated #
 # ============ #
