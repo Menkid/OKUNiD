@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d3a537275ad3ddc4aac64fe619741045
-timeCreated: 1435966498
+timeCreated: 1435966935
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,11 @@ TextureImporter:
     21300012: SandBlock_corner_topright
     21300014: SandBlock_corner_bottomright
     21300016: SandBlock_corner_bottomleft
+    21300018: SandBlock_smallborder_topleft
+    21300020: SandBlock_smallborder_topright
+    21300022: SandBlock_0
+    21300024: SandBlock_smallborder_bottomright
+    21300026: SandBlock_smallborder_bottomleft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -143,6 +148,56 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SandBlock_smallborder_topleft
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SandBlock_smallborder_topright
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SandBlock_0
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 85
+        width: 1
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SandBlock_smallborder_bottomright
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SandBlock_smallborder_bottomleft
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
         width: 128
         height: 128
       alignment: 0
