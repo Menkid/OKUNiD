@@ -18,10 +18,6 @@ public class SalmonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//lives
-		if (body.velocity.x > 3) {
-            myHealth.Heal(1);
-		}
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
         {
             Weapon weapon = GetComponent<Weapon>();
