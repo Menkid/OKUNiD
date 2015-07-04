@@ -23,6 +23,7 @@ public class SalmonController : MonoBehaviour {
             Weapon weapon = GetComponent<Weapon>();
             if (weapon != null)
             {
+                weapon.shootRight = faceRight;
                 weapon.Attack(false); // false because WE ARE NOT an enemy
             }
         }

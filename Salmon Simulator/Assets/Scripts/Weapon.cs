@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour {
 
     public Transform shotPrefab;
     public float shootingRate = 0.25f;
+    public bool shootRight = true;
 
     private float shootCooldown;
 
@@ -47,7 +48,7 @@ public class Weapon : MonoBehaviour {
             Move move = shotTransform.GetComponent<Move>();
             if (move != null)
             {
-                move.direction = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
+                move.direction = shootRight ? new Vector2(1, 0) : new Vector2(-1, 0);
             }
         }
     }
