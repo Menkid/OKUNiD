@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour {
             Move move = shotTransform.GetComponent<Move>();
             if (move != null)
             {
-                move.direction = new Vector2(GetComponent<Move>().direction.x, 0);
+                move.direction = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
             }
         }
     }

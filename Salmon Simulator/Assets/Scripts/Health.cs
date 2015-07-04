@@ -79,5 +79,10 @@ public class Health : MonoBehaviour
         if (shot == null) return;
         if (shot.isEnemy == isEnemy) return;
         Damage(shot.damage);
+        if (shot.lifeTime == 0)
+        {
+            return;
+        }
+        Destroy(shot.gameObject);
     }
 }

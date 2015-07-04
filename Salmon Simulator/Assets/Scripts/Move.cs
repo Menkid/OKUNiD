@@ -5,7 +5,7 @@ public class Move : MonoBehaviour
 {
 
     public float speed = 10;
-    public Vector2 direction = new Vector2(-1, 0);
+    public Vector2 direction = new Vector2(0, 0);
     private Vector2 vecSpeed;
 
     // Use this for initialization
@@ -17,7 +17,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vecSpeed = new Vector2(direction.x, direction.y) * speed;
+        vecSpeed = new Vector2(direction.x, direction.y).normalized * speed;
     }
 
     void FixedUpdate()
