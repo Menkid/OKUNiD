@@ -4,6 +4,7 @@ using System.Collections;
 public class SalmonController : MonoBehaviour {
 
 	private Rigidbody2D body;
+    private Health myHealth;
 	public float speed;
 	private bool faceRight = true;
 	public float frictionCoeff;
@@ -11,6 +12,8 @@ public class SalmonController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Lives = 3;
+	    myHealth = GetComponent<Health>();
+	    myHealth.Lives = 3;
 		body = GetComponent<Rigidbody2D> ();
 	}
 	
@@ -19,6 +22,7 @@ public class SalmonController : MonoBehaviour {
 		//lives
 		if (body.velocity.x > 3) {
 			Lives = Lives+1;
+            myHealth.Heal(1);
 		}
 
 
