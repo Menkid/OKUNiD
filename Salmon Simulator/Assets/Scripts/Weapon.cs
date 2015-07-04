@@ -34,7 +34,11 @@ public class Weapon : MonoBehaviour {
         {
             shootCooldown = shootingRate;
             Transform shotTransform = Instantiate(shotPrefab) as Transform;
-            shotTransform.position = transform.position;
+            if (shotTransform == null)
+            {
+                return;
+            }
+            shotTransform.position = transform.position + new Vector3(transform.localScale.x, 0, 0);
             Shot shot = shotTransform.GetComponent<Shot>();
             if (shot != null)
             {
@@ -43,7 +47,7 @@ public class Weapon : MonoBehaviour {
             Move move = shotTransform.GetComponent<Move>();
             if (move != null)
             {
-                move.direction = transform.right;
+                move.direction = new Vector2(GetComponent<Move>().direction.x, 0);
             }
         }
     }
