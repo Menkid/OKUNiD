@@ -14,7 +14,8 @@ public class SalmonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Quaternion rotationFixed = new Quaternion (0, 0, 0,0);
+		body.transform.rotation = rotationFixed;
 	}
 
 	void FixedUpdate(){
@@ -29,6 +30,7 @@ public class SalmonController : MonoBehaviour {
 		}
 		float frictionX = frictionCoeff * body.velocity.x;
 		float frictionY = frictionCoeff * body.velocity.y;
+
 
 		Vector2 force = new Vector2 (moveHorizontal-frictionX, moveVertical-frictionY);
 		body.AddForce(force*speed);
