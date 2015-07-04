@@ -24,6 +24,6 @@ public class SalmonStat : MonoBehaviour {
 	    {
 	        return;
 	    }
-        GUI.Box(new Rect(200, 0, 200, 20), "Lives : " + myHealth.Lives);
+        GUI.Box(new Rect(200, 0, 300, 20), "Lives : " + myHealth.Lives + " HP : " + myHealth.hp);
 	}
 }

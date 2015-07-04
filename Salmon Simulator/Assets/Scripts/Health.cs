@@ -5,7 +5,9 @@ public class Health : MonoBehaviour
 {
 
     public int Lives = 1;
-    public int MAX_LIVES = 200;
+    public int hp = 10;
+    public int MAX_LIVES = 20;
+    public int MAX_HP = 100;
     public bool isEnemy = true;
 
     // Use this for initialization
@@ -24,14 +26,30 @@ public class Health : MonoBehaviour
 
     public void Damage(int amount)
     {
-        Lives -= amount;
-        if (Lives <= 0)
+        hp -= amount;
+        if (hp <= 0)
         {
-            Destroy(gameObject);
+            if (--Lives <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
     public void Heal(int amount)
+    {
+        hp += amount;
+        if (MAX_HP == 0)
+        {
+            return;
+        }
+        if (hp > MAX_HP)
+        {
+            hp = MAX_HP;
+        }
+    }
+
+    public void AddLives(int amount)
     {
         Lives += amount;
         if (MAX_LIVES == 0)
