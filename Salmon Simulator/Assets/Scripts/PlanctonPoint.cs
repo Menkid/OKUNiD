@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlanctonPoint : MonoBehaviour {
 	public int points = 1;
+    public int mutation = 0;
 	public int lifeTime = 0;
 	public bool isEnemy = false;
 	

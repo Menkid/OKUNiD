@@ -23,5 +23,6 @@ public class Move : MonoBehaviour
     void FixedUpdate()
     {
         GetComponent<Rigidbody2D>().velocity = vecSpeed;
+
     }
 }

@@ -8,6 +8,8 @@ public class SalmonController : MonoBehaviour {
 	public float speed;
 	private bool faceRight = true;
 	public float frictionCoeff;
+    public int score;
+    public int mutationLevel;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,7 @@ public class SalmonController : MonoBehaviour {
             Weapon weapon = GetComponent<Weapon>();
             if (weapon != null)
             {
+                weapon.shootRight = faceRight;
                 weapon.Attack(false); // false because WE ARE NOT an enemy
             }
         }
@@ -55,4 +58,13 @@ public class SalmonController : MonoBehaviour {
 		transform.localScale = new Vector3(transform.localScale.x *-1, transform.localScale.y, transform.localScale.z);
 		faceRight = !faceRight;
 	}
+
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        PlanctonPoint bonus = obj.gameObject.GetComponent<PlanctonPoint>();
+        if (bonus == null) return;
+        score += bonus.points;
+        mutationLevel += bonus.mutation;
+        Destroy(bonus.gameObject);
+    }
 }
