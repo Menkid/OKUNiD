@@ -34,14 +34,14 @@ public class WebCamSobel : MonoBehaviour {
 		
 		// Update is called once per frame
 		void Update (){
-		if (mCamera != null) {
-			image = HsbFilter ();
-			computeCenter (image);
-			Texture renderer = plane.GetComponent<Texture> ();
-			//Component renderer = plane.GetComponent<Renderer> ();
-			renderer= image;
+			if (mCamera != null) {
+				image = HsbFilter ();
+				computeCenter (image);
+				//Texture renderer = plane.GetComponent<Texture> ();
+				//Component renderer = plane.GetComponent<Renderer> ();
+				//renderer= image;
+				}
 			}
-		}
 
 
 		void computeCenter(Texture2D image){
@@ -73,7 +73,7 @@ public class WebCamSobel : MonoBehaviour {
 			int width = mCamera.width;
 			int height = mCamera.height;
 		
-			int totPixels = width * height;
+			//int totPixels = width * height;
 
 			Texture2D result = new Texture2D(width,height);
 	
