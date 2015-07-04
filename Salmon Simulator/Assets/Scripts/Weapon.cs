@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour {
     public Transform shotPrefab;
     public float shootingRate = 0.25f;
     public bool shootRight = true;
-
+    public AudioClip shoot;
     private float shootCooldown;
 
     public bool canAttack
