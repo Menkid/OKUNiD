@@ -1,0 +1,50 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Weapon : MonoBehaviour {
+
+    public Transform shotPrefab;
+    public float shootingRate = 0.25f;
+
+    private float shootCooldown;
+
+    public bool canAttack
+    {
+        get { return shootCooldown <= 0; }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        shootCooldown = 0f;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (shootCooldown > 0)
+        {
+            shootCooldown -= Time.deltaTime;
+        }
+    }
+
+    public void Attack(bool isEnemy)
+    {
+        if (canAttack)
+        {
+            shootCooldown = shootingRate;
+            Transform shotTransform = Instantiate(shotPrefab) as Transform;
+            shotTransform.position = transform.position;
+            Shot shot = shotTransform.GetComponent<Shot>();
+            if (shot != null)
+            {
+                shot.isEnemy = isEnemy;
+            }
+            Move move = shotTransform.GetComponent<Move>();
+            if (move != null)
+            {
+                move.direction = transform.right;
+            }
+        }
+    }
+}
