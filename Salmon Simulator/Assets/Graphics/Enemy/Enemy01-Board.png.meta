@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: fcc1a1630bcc2104fa20fdef5b069f35
-timeCreated: 1436003019
+guid: 60bdacbf384c1ba428df12818a1a456d
+timeCreated: 1436003122
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Algues_pos1
-    21300002: Algues_pos2
-    21300004: Algues_pos3
-    21300006: Algues_pos4
-    21300008: Algues_pos5
+    21300000: Enemy01-clawleft
+    21300002: Enemy01-clawright
+    21300004: Enemy01-body
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,53 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Algues_pos1
+    - name: Enemy01-clawleft
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 60
-        height: 414
+        x: 129
+        y: 221
+        width: 24
+        height: 40
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Algues_pos2
+    - name: Enemy01-clawright
       rect:
         serializedVersion: 2
-        x: 154
-        y: 0
-        width: 91
-        height: 416
+        x: 336
+        y: 221
+        width: 26
+        height: 39
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Algues_pos3
+    - name: Enemy01-body
       rect:
         serializedVersion: 2
-        x: 378
-        y: 0
-        width: 101
-        height: 492
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Algues_pos4
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 0
-        width: 104
-        height: 431
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Algues_pos5
-      rect:
-        serializedVersion: 2
-        x: 875
-        y: 0
-        width: 85
-        height: 397
+        x: 153
+        y: 100
+        width: 175
+        height: 141
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
