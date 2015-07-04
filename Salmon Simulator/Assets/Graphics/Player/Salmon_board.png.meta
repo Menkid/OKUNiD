@@ -1,12 +1,14 @@
 fileFormatVersion: 2
 guid: b83326b49f04f664fa1bb5b8ac738be7
-timeCreated: 1435962086
+timeCreated: 1436006777
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Salmon_main
     21300002: Salmon_fin
     21300004: Salmon_eyes_closed
+    21300006: Salmon_mouth_closed
+    21300008: Salmon_mouth_open
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,9 +58,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 195
-        y: 1269
+        y: 1268
         width: 510
-        height: 288
+        height: 289
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -76,9 +78,29 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 759
-        y: 1306
+        y: 1319
         width: 126
-        height: 80
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Salmon_mouth_closed
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 1221
+        width: 161
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Salmon_mouth_open
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1116
+        width: 68
+        height: 56
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
