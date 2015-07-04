@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b83326b49f04f664fa1bb5b8ac738be7
-timeCreated: 1436006777
+timeCreated: 1436013733
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,8 @@ TextureImporter:
     21300004: Salmon_eyes_closed
     21300006: Salmon_mouth_closed
     21300008: Salmon_mouth_open
+    21300010: Salmon_board_0
+    21300012: Salmon_board_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -67,10 +69,10 @@ TextureImporter:
     - name: Salmon_fin
       rect:
         serializedVersion: 2
-        x: 759
-        y: 1414
-        width: 118
-        height: 74
+        x: 760
+        y: 1450
+        width: 116
+        height: 73
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -79,7 +81,7 @@ TextureImporter:
         serializedVersion: 2
         x: 759
         y: 1319
-        width: 126
+        width: 125
         height: 81
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -97,10 +99,30 @@ TextureImporter:
     - name: Salmon_mouth_open
       rect:
         serializedVersion: 2
-        x: 796
-        y: 1116
-        width: 68
-        height: 56
+        x: 799
+        y: 1082
+        width: 69
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Salmon_board_0
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 998
+        width: 121
+        height: 176
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Salmon_board_1
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 989
+        width: 77
+        height: 182
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
