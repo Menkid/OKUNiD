@@ -8,10 +8,9 @@ public class SalmonController : MonoBehaviour {
 	public float speed;
 	private bool faceRight = true;
 	public float frictionCoeff;
-	public int Lives;
+
 	// Use this for initialization
 	void Start () {
-		Lives = 3;
 	    myHealth = GetComponent<Health>();
 	    myHealth.Lives = 3;
 		body = GetComponent<Rigidbody2D> ();
@@ -21,9 +20,16 @@ public class SalmonController : MonoBehaviour {
 	void Update () {
 		//lives
 		if (body.velocity.x > 3) {
-			Lives = Lives+1;
             myHealth.Heal(1);
 		}
+        if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
+        {
+            Weapon weapon = GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                weapon.Attack(false); // false because WE ARE NOT an enemy
+            }
+        }
 
 
 		//rotations
