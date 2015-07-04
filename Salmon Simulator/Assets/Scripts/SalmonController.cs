@@ -7,13 +7,22 @@ public class SalmonController : MonoBehaviour {
 	public float speed;
 	private bool faceRight = true;
 	public float frictionCoeff;
+	public int Lives;
 	// Use this for initialization
 	void Start () {
+		Lives = 3;
 		body = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//lives
+		if (body.velocity.x > 3) {
+			Lives = Lives+1;
+		}
+
+
+		//rotations
 		Quaternion rotationFixed = new Quaternion (0, 0, 0,0);
 		body.transform.rotation = rotationFixed;
 	}
