@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b83326b49f04f664fa1bb5b8ac738be7
-timeCreated: 1436013733
+timeCreated: 1436036595
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: Salmon_mouth_open
     21300010: Salmon_board_0
     21300012: Salmon_board_1
+    21300014: Salmon_board_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -123,6 +124,16 @@ TextureImporter:
         y: 989
         width: 77
         height: 182
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Salmon_board_2
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 1309
+        width: 73
+        height: 79
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
