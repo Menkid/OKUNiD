@@ -8,6 +8,9 @@ public class SalmonLeggedController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	public float groundRadius = 0.2f;
 	bool facingRight = true;
+	public int minPositionY = -55;
+	public int minPositionX = 134;
+	public Vector2 origin;
 
 	Animator anim;
 
@@ -17,11 +20,13 @@ public class SalmonLeggedController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		origin = rgbdy.position;
 		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per physics call
 	void FixedUpdate () {
+
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
 		float move = Input.GetAxis ("Horizontal");
@@ -31,6 +36,10 @@ public class SalmonLeggedController : MonoBehaviour {
 	}
 
 	void Update () {
+		if (rgbdy.position.y < minPositionY && rgbdy.position.x>minPositionX) {
+			//respawn 
+			rgbdy.position = origin;
+		}
 		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 			rgbdy.AddForce (new Vector2 (0, jumpForce));
 		}
