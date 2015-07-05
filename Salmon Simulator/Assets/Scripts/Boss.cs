@@ -26,9 +26,14 @@ public class Boss : MonoBehaviour
 
     void OnDestroy()
     {
-        Vector2 pos = GetComponent<Rigidbody2D>().position;
+		Debug.Log ("Please have a look at Boss.OnDestroy() -omacha");
+		// We can't do this... If you unload the scene while Meow Z. is still there, while 
+		// unloading the scene it will create a new obect => bug !
+        /*
+		Vector2 pos = GetComponent<Rigidbody2D>().position;
         Transform myLoot = Instantiate(loot);
         myLoot.position = pos;
+        */
     }
 
     void FixedUpdate()
