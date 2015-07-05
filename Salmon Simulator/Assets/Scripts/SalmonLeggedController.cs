@@ -8,7 +8,7 @@ public class SalmonLeggedController : MonoBehaviour {
 	public float maxSpeed = 10f;
 	public float groundRadius = 0.2f;
 	bool facingRight = true;
-	public int minPositionY = -55;
+	public int minPositionY = -54;
 	public int minPositionX = 134;
 	public Vector2 origin;
 
@@ -36,10 +36,7 @@ public class SalmonLeggedController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (rgbdy.position.y < minPositionY && rgbdy.position.x>minPositionX) {
-			//respawn 
-			rgbdy.position = origin;
-		}
+	
 		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 			rgbdy.AddForce (new Vector2 (0, jumpForce));
 		}

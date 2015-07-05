@@ -12,11 +12,16 @@ public class Health : MonoBehaviour
     public bool isEnemy = true;
     public Transform loot;
     public AudioClip deathSound;
+	public Rigidbody2D body;
+	private Vector2 origin;
 
     // Use this for initialization
     void Start()
     {
         hp = SPAWN_HP;
+		if (body != null) {
+			origin = body.position;
+		}
     }
 
 
@@ -29,26 +34,32 @@ public class Health : MonoBehaviour
 
     public void Damage(int amount)
     {
-        hp -= amount;
-        if (hp <= 0)
-        {
-            hp = SPAWN_HP;
-            if (--Lives <= 0)
-            {
-                if (deathSound != null)
-                {
-                    AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.8f);
-                }
-                if (loot != null)
-                {
-                    Vector2 pos = GetComponent<Rigidbody2D>().position;
-                    Transform myLoot = Instantiate(loot);
-                    myLoot.position = pos;
-                }
-                Destroy(gameObject);
-            }
-        }
-    }
+		hp -= amount;
+		if (hp <= 0) {
+			hp = SPAWN_HP;
+			if (--Lives <= 0) {
+				if (!isEnemy) {
+					Application.LoadLevel (5);
+				}
+				{
+					if (deathSound != null) {
+						AudioSource.PlayClipAtPoint (deathSound, transform.position, 0.8f);
+					}
+					if (loot != null) {
+						Vector2 pos = GetComponent<Rigidbody2D> ().position;
+						Transform myLoot = Instantiate (loot);
+						myLoot.position = pos;
+					}
+					Destroy (gameObject);
+				}
+			} else {
+				if (!isEnemy && body != null) {
+					body.velocity = new Vector2(0,0);
+					body.position = new Vector2(origin.x,origin.y+5);
+				}
+			}
+		}
+	}
 
     public void Heal(int amount)
     {
