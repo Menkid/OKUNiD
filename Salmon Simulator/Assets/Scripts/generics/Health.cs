@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        body = GetComponent<Rigidbody2D>();
         hp = SPAWN_HP;
 		if (body != null) {
 			origin = body.position;
@@ -39,7 +40,7 @@ public class Health : MonoBehaviour
 			hp = SPAWN_HP;
 			if (--Lives <= 0) {
 				if (!isEnemy) {
-					Application.LoadLevel (5);
+					Application.LoadLevel(Application.loadedLevel);
 				}
 				{
 					if (deathSound != null) {
