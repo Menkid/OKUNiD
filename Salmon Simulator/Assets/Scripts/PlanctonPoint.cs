@@ -21,7 +21,7 @@ public class PlanctonPoint : MonoBehaviour {
     void OnDestroy()
     {
         if (levelToLoadOnDeath >= 0) {
-			Application.LoadLevel (levelToLoadOnDeath);
+			Application.LoadLevel(levelToLoadOnDeath);
 		}
     }
 }

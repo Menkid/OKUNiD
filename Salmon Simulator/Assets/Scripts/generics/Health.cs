@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
 			hp = SPAWN_HP;
 			if (--Lives <= 0) {
 				if (!isEnemy) {
-					Application.LoadLevel(Application.loadedLevel);
+					Application.LoadLevel(5);
 				}
 				{
 					if (deathSound != null) {

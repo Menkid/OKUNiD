@@ -26,9 +26,11 @@ public class Boss : MonoBehaviour
 	void Start ()
     {
 		canvas = GetComponent<Canvas> ();
-        if (canvas != null) ;
-        canvas.enabled = false;
-		text = GetComponent<Text> ();
+	    if (canvas != null)
+	    {
+	        canvas.enabled = false;
+	    }
+	    text = GetComponent<Text> ();
         weapon = GetComponent<Weapon>();
 	    movement = GetComponent<Move>();
 	    music = GetComponent<AudioSource>();
@@ -41,11 +43,14 @@ public class Boss : MonoBehaviour
             
 	    }
 		TextDuration *= 100;
-		text.text = "MWAHAHAHA ! This place belongs to me, the whole ocean !" +
-			"How dare you swim in my territory ?! You think a poor salmon can defeat Meow Zedong aka Mr. Tsunami ?!" +
-			"After Japan surrendered to me in 1945, I decided to put my head onto a cat body !" +
-			"I would keep harassing them, even after my death. I hired the best Chinese surgeons to transplant. " +
-			"Remember Fukushima ? Why do you think people call me Mr. Tsunami ! I’ll wreck you !";
+	    if (text != null)
+	    {
+	        text.text = "MWAHAHAHA ! This place belongs to me, the whole ocean !" +
+	                    "How dare you swim in my territory ?! You think a poor salmon can defeat Meow Zedong aka Mr. Tsunami ?!" +
+	                    "After Japan surrendered to me in 1945, I decided to put my head onto a cat body !" +
+	                    "I would keep harassing them, even after my death. I hired the best Chinese surgeons to transplant. " +
+	                    "Remember Fukushima ? Why do you think people call me Mr. Tsunami ! I’ll wreck you !";
+	    }
     }
 
     void OnDestroy()
