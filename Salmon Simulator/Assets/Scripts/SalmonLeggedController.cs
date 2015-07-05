@@ -40,7 +40,7 @@ public class SalmonLeggedController : MonoBehaviour {
 			//respawn 
 			rgbdy.position = origin;
 		}
-		if (grounded && Input.GetKeyDown ("Jump")) {
+		if (grounded && (Input.GetKeyDown (KeyCode.Space))) {
 			rgbdy.AddForce (new Vector2 (0, jumpForce));
 		}
 	}
