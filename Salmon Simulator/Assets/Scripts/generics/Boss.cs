@@ -97,11 +97,15 @@ public class Boss : MonoBehaviour
         {
             Flip();
         }
-		if (TextDuration <= 0)
-			canvas.enabled = false;
-		else {
-			TextDuration--;
-		}
+        if (canvas != null)
+        {
+            if (TextDuration <= 0)
+                canvas.enabled = false;
+            else
+            {
+                TextDuration--;
+            }
+        }
     }
 
     private void Flip()
