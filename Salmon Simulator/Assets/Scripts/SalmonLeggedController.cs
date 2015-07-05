@@ -28,25 +28,12 @@ public class SalmonLeggedController : MonoBehaviour {
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
 		rgbdy.velocity = new Vector2 (move * maxSpeed, rgbdy.velocity.y);
-
-		if (move > 0 && !facingRight)
-			Flip ();
-		else if (move < 0 && facingRight)
-			Flip ();
 	}
 
 	void Update () {
 		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 			rgbdy.AddForce (new Vector2 (0, jumpForce));
 		}
-	}
-
-	void Flip () {
-		return;
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
 	}
 
 }
