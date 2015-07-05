@@ -29,6 +29,8 @@ public class Boss : MonoBehaviour
 	    {
 	        music.clip = levelTheme;
 	        music.Play();
+	        music.volume = 0.8f;
+            
 	    }
     }
 
