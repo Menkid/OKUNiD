@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.ComponentModel;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -17,10 +18,15 @@ public class Boss : MonoBehaviour
     public AudioClip theme;
     public AudioClip levelTheme;
     private AudioSource music;
+	public Canvas canvas;
+	public Text text;
+	public int TextDuration = 20;
 
 	// Use this for initialization
 	void Start ()
     {
+		canvas = GetComponent<Canvas> ();
+		text = GetComponent<Text> ();
         weapon = GetComponent<Weapon>();
 	    movement = GetComponent<Move>();
 	    music = GetComponent<AudioSource>();
@@ -32,6 +38,12 @@ public class Boss : MonoBehaviour
 	        music.volume = 0.6f;
             
 	    }
+		TextDuration *= 100;
+		text.text = "MWAHAHAHA ! This place belongs to me, the whole ocean !" +
+			"How dare you swim in my territory ?! You think a poor salmon can defeat Meow Zedong aka Mr. Tsunami ?!" +
+			"After Japan surrendered to me in 1945, I decided to put my head onto a cat body !" +
+			"I would keep harassing them, even after my death. I hired the best Chinese surgeons to transplant. " +
+			"Remember Fukushima ? Why do you think people call me Mr. Tsunami ! I’ll wreck you !";
     }
 
     void OnDestroy()
@@ -66,6 +78,7 @@ public class Boss : MonoBehaviour
         firstActive = true;
         if (firstActive && !oldActive)
         {
+			if(canvas!=null)canvas.enabled=true;
             music.Stop();
             music.clip = theme;
             music.Play();
@@ -87,6 +100,11 @@ public class Boss : MonoBehaviour
         {
             Flip();
         }
+		if (TextDuration <= 0)
+			canvas.enabled = false;
+		else {
+			TextDuration--;
+		}
     }
 
     private void Flip()
