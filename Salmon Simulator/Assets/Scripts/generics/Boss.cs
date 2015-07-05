@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
     public AudioClip theme;
     public AudioClip levelTheme;
     private AudioSource music;
+    private Canvas UI;
 
 	// Use this for initialization
 	void Start ()
@@ -32,11 +33,20 @@ public class Boss : MonoBehaviour
 	        music.volume = 0.8f;
             
 	    }
+	    UI = GetComponent<Canvas>();
+	    if (UI != null)
+	    {
+	        UI.enabled = false;
+	    }
     }
 
     void OnDestroy()
     {
+        music.volume = 0f;
         music.Stop();
+        music.clip = levelTheme;
+        music.Play();
+        UI.enabled = true;
     }
 	
 	// Update is called once per frame
