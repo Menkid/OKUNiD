@@ -22,6 +22,7 @@ public class TextAnimation : MonoBehaviour {
 			if(TextToWrite[Position].Equals('\\')){
 				currentTextAppearing = currentTextAppearing + '\n';
 				Position++;
+				Thread.Sleep(1000);
 			}else{
 			currentTextAppearing = currentTextAppearing + TextToWrite[Position];
 			Position++;
