@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
             {
                 if (deathSound != null)
                 {
-                    AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.4f);
+                    AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.8f);
                 }
                 if (loot != null)
                 {
