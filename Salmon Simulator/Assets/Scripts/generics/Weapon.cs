@@ -46,7 +46,8 @@ public class Weapon : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint(shoot, transform.position, 1);
 
-			GetComponent<FishAnimation>().OpenMouth();
+			if(!isEnemy)
+				GetComponent<FishAnimation>().OpenMouth();
 		}
 	}
 }
