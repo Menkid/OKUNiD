@@ -10,6 +10,7 @@ public class GAMEOVER : MonoBehaviour {
 			wait = 10;
 		}
 		Thread.Sleep(wait*1000);
+		Application.LoadLevel (1);
 	}
 	
 	// Update is called once per frame
