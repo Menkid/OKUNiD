@@ -16,6 +16,7 @@ public class Boss : MonoBehaviour
     private Weapon weapon;
     public int activationRadius = 200;
     public AudioClip theme;
+    public AudioClip levelTheme;
     private AudioSource music;
 
 	// Use this for initialization
@@ -24,6 +25,11 @@ public class Boss : MonoBehaviour
         weapon = GetComponent<Weapon>();
 	    movement = GetComponent<Move>();
 	    music = GetComponent<AudioSource>();
+	    if (music != null && levelTheme != null)
+	    {
+	        music.clip = levelTheme;
+	        music.Play();
+	    }
     }
 
     void OnDestroy()
@@ -51,6 +57,7 @@ public class Boss : MonoBehaviour
         firstActive = true;
         if (firstActive && !oldActive)
         {
+            music.Stop();
             music.clip = theme;
             music.Play();
         }

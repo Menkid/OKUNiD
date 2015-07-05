@@ -6,6 +6,7 @@ public class PlanctonPoint : MonoBehaviour {
     public int mutation = 0;
 	public int lifeTime = 0;
 	public bool isEnemy = false;
+    public int levelToLoadOnDeath = -1;
 	
 	// Use this for initialization
 	void Start()
@@ -16,4 +17,12 @@ public class PlanctonPoint : MonoBehaviour {
 		}
 		Destroy(gameObject, lifeTime);
 	}
+
+    void OnDestroy()
+    {
+        if (levelToLoadOnDeath >= 0)
+        {
+            Application.LoadLevel(levelToLoadOnDeath);
+        }
+    }
 }
