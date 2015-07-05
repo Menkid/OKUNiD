@@ -7,6 +7,7 @@ public class PlanctonPoint : MonoBehaviour {
 	public int lifeTime = 0;
 	public bool isEnemy = false;
     public int levelToLoadOnDeath = -1;
+    public string alternateLvlToLoad = null;
 	
 	// Use this for initialization
 	void Start()
@@ -23,6 +24,10 @@ public class PlanctonPoint : MonoBehaviour {
         if (levelToLoadOnDeath >= 0)
         {
             Application.LoadLevel(levelToLoadOnDeath);
+        }
+        else if (alternateLvlToLoad != null)
+        {
+            Application.LoadLevel(alternateLvlToLoad);
         }
     }
 }
