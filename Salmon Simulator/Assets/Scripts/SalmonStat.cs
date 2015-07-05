@@ -7,8 +7,7 @@ public class SalmonStat : MonoBehaviour {
     private SalmonController control;
 	// Use this for initialization
 	void Start () {
-		salmon = GameObject.Find ("Salmon");
-	    myHealth = salmon.GetComponent<Health>();
+		myHealth = salmon.GetComponent<Health>();
 	    control = salmon.GetComponent<SalmonController>();
 	}
 	
