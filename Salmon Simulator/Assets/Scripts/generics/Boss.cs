@@ -52,10 +52,7 @@ public class Boss : MonoBehaviour
         {
             return;
         }
-        music.volume = 0f;
         music.Stop();
-        music.clip = levelTheme;
-        music.Play();
     }
 	
 	// Update is called once per frame
