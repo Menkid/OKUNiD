@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     public int SPAWN_HP = 10;
     public int MAX_HP = 100;
     public bool isEnemy = true;
+    public Transform loot;
+    public AudioClip deathSound;
 
     // Use this for initialization
     void Start()
@@ -33,6 +35,16 @@ public class Health : MonoBehaviour
             hp = SPAWN_HP;
             if (--Lives <= 0)
             {
+                if (deathSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.4f);
+                }
+                if (loot != null)
+                {
+                    Vector2 pos = GetComponent<Rigidbody2D>().position;
+                    Transform myLoot = Instantiate(loot);
+                    myLoot.position = pos;
+                }
                 Destroy(gameObject);
             }
         }
