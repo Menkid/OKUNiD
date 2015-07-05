@@ -36,6 +36,10 @@ public class Boss : MonoBehaviour
 
     void OnDestroy()
     {
+        if (music == null)
+        {
+            return;
+        }
         music.volume = 0f;
         music.Stop();
         music.clip = levelTheme;
