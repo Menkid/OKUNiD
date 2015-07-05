@@ -4,7 +4,8 @@ using System.Collections;
 public class SalmonLeggedController : MonoBehaviour {
 
 	public Rigidbody2D rgbdy;
-	public float jumpForce = 1000f;
+	public float jump1Force = 700f;
+	public float jump2Force = 1000f;
 	public float maxSpeed = 10f;
 	public float groundRadius = 0.2f;
 	bool facingRight = true;
@@ -40,8 +41,11 @@ public class SalmonLeggedController : MonoBehaviour {
 			//respawn 
 			rgbdy.position = origin;
 		}
-		if (grounded && (Input.GetKeyDown (KeyCode.Space))) {
-			rgbdy.AddForce (new Vector2 (0, jumpForce));
+		if (grounded && (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton1))) {
+			rgbdy.AddForce (new Vector2 (0, jump1Force));
+		}
+		if (grounded && (Input.GetKeyDown (KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.JoystickButton0))) {
+			rgbdy.AddForce (new Vector2 (0, jump2Force));
 		}
 	}
 

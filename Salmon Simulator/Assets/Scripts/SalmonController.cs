@@ -22,7 +22,7 @@ public class SalmonController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton5) || Input.GetKeyDown(KeyCode.JoystickButton6))
         {
             Weapon weapon = GetComponent<Weapon>();
             if (weapon != null)
