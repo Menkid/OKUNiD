@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.Collections;
 using System.ComponentModel;
-using UnityEditor;
 
 public class Boss : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class Boss : MonoBehaviour
     public AudioClip theme;
     public AudioClip levelTheme;
     private AudioSource music;
-    private Canvas UI;
 
 	// Use this for initialization
 	void Start ()
@@ -28,15 +26,11 @@ public class Boss : MonoBehaviour
 	    music = GetComponent<AudioSource>();
 	    if (music != null && levelTheme != null)
 	    {
+	        music.enabled = true;
 	        music.clip = levelTheme;
 	        music.Play();
-	        music.volume = 0.8f;
+	        music.volume = 0.6f;
             
-	    }
-	    UI = GetComponent<Canvas>();
-	    if (UI != null)
-	    {
-	        UI.enabled = false;
 	    }
     }
 
@@ -46,7 +40,6 @@ public class Boss : MonoBehaviour
         music.Stop();
         music.clip = levelTheme;
         music.Play();
-        UI.enabled = true;
     }
 	
 	// Update is called once per frame

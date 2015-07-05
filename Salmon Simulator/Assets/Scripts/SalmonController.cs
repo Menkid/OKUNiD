@@ -66,6 +66,10 @@ public class SalmonController : MonoBehaviour {
         PlanctonPoint bonus = obj.gameObject.GetComponent<PlanctonPoint>();
         if (bonus == null) return;
         score += bonus.points;
+        if (score % 50 == 0)
+        {
+            myHealth.AddLives(1);
+        }
         mutationLevel += bonus.mutation;
 		AudioSource.PlayClipAtPoint (CollectPlankton, new Vector3 (0, 0, 0));
         Destroy(bonus.gameObject);
