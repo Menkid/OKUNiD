@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 95e58a8fa936809478180c599ac72c3a
-timeCreated: 1436033126
+timeCreated: 1436099272
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Dauphin-Board_0
-    21300002: Dauphin-Board_1
-    21300004: Dauphin-Board_2
+    21300000: Dauphin-Body
+    21300002: Dauphin_Fin
+    21300004: Dauphin_Gun
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,7 +52,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Dauphin-Board_0
+    - name: Dauphin-Body
       rect:
         serializedVersion: 2
         x: 104
@@ -60,9 +60,9 @@ TextureImporter:
         width: 509
         height: 273
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Dauphin-Board_1
+    - name: Dauphin_Fin
       rect:
         serializedVersion: 2
         x: 204
@@ -70,9 +70,9 @@ TextureImporter:
         width: 121
         height: 98
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Dauphin-Board_2
+    - name: Dauphin_Gun
       rect:
         serializedVersion: 2
         x: 456
@@ -80,7 +80,7 @@ TextureImporter:
         width: 180
         height: 81
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
