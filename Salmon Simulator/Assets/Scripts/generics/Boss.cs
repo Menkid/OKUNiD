@@ -26,6 +26,8 @@ public class Boss : MonoBehaviour
 	void Start ()
     {
 		canvas = GetComponent<Canvas> ();
+        if (canvas != null) ;
+        canvas.enabled = false;
 		text = GetComponent<Text> ();
         weapon = GetComponent<Weapon>();
 	    movement = GetComponent<Move>();
