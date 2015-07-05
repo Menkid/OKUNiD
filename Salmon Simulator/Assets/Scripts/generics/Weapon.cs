@@ -45,6 +45,8 @@ public class Weapon : MonoBehaviour {
 				move.direction = shootRight ? new Vector2(1, 0) : new Vector2(-1, 0);
 
 			AudioSource.PlayClipAtPoint(shoot, transform.position, 1);
+
+			GetComponent<FishAnimation>().OpenMouth();
 		}
 	}
 }
