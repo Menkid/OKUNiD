@@ -11,6 +11,8 @@ public class SalmonController : MonoBehaviour {
     public int score;
     public int mutationLevel;
 
+	public AudioClip CollectPlankton;
+
 	// Use this for initialization
 	void Start () {
 	    myHealth = GetComponent<Health>();
@@ -65,6 +67,7 @@ public class SalmonController : MonoBehaviour {
         if (bonus == null) return;
         score += bonus.points;
         mutationLevel += bonus.mutation;
+		AudioSource.PlayClipAtPoint (CollectPlankton, new Vector3 (0, 0, 0));
         Destroy(bonus.gameObject);
     }
 }
