@@ -60,6 +60,9 @@ public class Boss : MonoBehaviour
             return;
         }
         music.Stop();
+		print (Application.loadedLevel);
+		print (Application.loadedLevelName);
+		//Application.LoadLevel (Application.loadedLevel + 1);
     }
 	
 	// Update is called once per frame

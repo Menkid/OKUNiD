@@ -62,7 +62,7 @@ public class SalmonController : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D obj)
-    {
+    {	
         PlanctonPoint bonus = obj.gameObject.GetComponent<PlanctonPoint>();
         if (bonus == null) return;
         score += bonus.points;
@@ -72,6 +72,17 @@ public class SalmonController : MonoBehaviour {
         }
         mutationLevel += bonus.mutation;
 		AudioSource.PlayClipAtPoint (CollectPlankton, new Vector3 (0, 0, 0));
+		if (bonus.isLoot) {
+			print("===IS LOOT ===");
+			print(Application.levelCount);
+			print("loaded : "+Application.loadedLevel+"-"+Application.loadedLevelName);
+			print("To Be loaded : "+bonus.levelToLoadOnDeath);
+			if(bonus.levelToLoadOnDeath<Application.levelCount){
+			Application.LoadLevel(bonus.levelToLoadOnDeath);
+			}else{
+				Application.LoadLevel(Application.levelCount-1);
+			}
+		}
         Destroy(bonus.gameObject);
     }
 }

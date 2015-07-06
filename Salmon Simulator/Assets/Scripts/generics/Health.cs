@@ -38,11 +38,11 @@ public class Health : MonoBehaviour
 		hp -= amount;
 		if (hp <= 0) {
 			hp = SPAWN_HP;
-			if (--Lives <= 0) {
+			if (Lives-1 <= 0) {
+				Lives--;
 				if (!isEnemy) {
-					Application.LoadLevel(5);
-				}
-				{
+					Application.LoadLevel(Application.levelCount-1);
+				}else{
 					if (deathSound != null) {
 						AudioSource.PlayClipAtPoint (deathSound, transform.position, 0.8f);
 					}
@@ -53,8 +53,9 @@ public class Health : MonoBehaviour
 					}
 					Destroy (gameObject);
 				}
-			} else {
+			} else { ///respawn
 				if (!isEnemy && body != null) {
+					Lives--;
 					body.velocity = new Vector2(0,0);
 					body.position = new Vector2(origin.x,origin.y+5);
 				}
