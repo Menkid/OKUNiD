@@ -41,8 +41,13 @@ public class Weapon : MonoBehaviour {
 				shot.isEnemy = isEnemy;
 
 			Move move = shotTransform.GetComponent<Move>();
-			if (move != null)
+			Vector3 scale = shotTransform.localScale;
+			float scaleX = Mathf.Abs(scale.x);
+			if (move != null) {
 				move.direction = shootRight ? new Vector2(1, 0) : new Vector2(-1, 0);
+				scale.x = shootRight ? scaleX : -scaleX;
+				shotTransform.localScale = scale;
+			}
 
 			AudioSource.PlayClipAtPoint(shoot, transform.position, 0.2f);
 
